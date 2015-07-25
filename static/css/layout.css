@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.header {
+    border: #cec solid 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 0 0 0;
+}
+
+.header .logo {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.container .chat-box {
+    position: relative;
+    border: #cec solid 1px;
+    border-radius: 5px;
+    height: 500px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+.container .chat-box > li {
+    display: table;
+    width: 100%;
+    position: relative;
+    list-style-type: none;
+    border-bottom: #eee solid 1px;
+    padding: 15px;
+}
+
+.container .chat-box > li[data-temporary=sending] {
+    background-color: #eee;
+}
+
+.container .chat-box > li[data-temporary=error] {
+    background-color: #fdd;
+}
+
+.container .chat-box > li .author {
+    display: table-cell;
+    width: 40px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.container .chat-box > li .content {
+    display: table-cell;
+    padding-left: 5px;
+
+    font-size: 0.9em;
+}
+
+.container .chat-box > li .date {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.container .edit-box {
+    display: table;
+    height: 36px;
+    width: 100%;
+}
+
+.progress-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
+/*
+.progress-overlay svg.progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 20;
+    margin-left: 20;
+    width: 40;
+    height: 40;
+}
+*/
+.container .edit-box .nickname-wrapper {
+    display: table-cell;
+    width: 100px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.container .edit-box .nickname-wrapper .nickname-box {
+    margin-right: 8px;
+    background-color: #eee;
+    border: #cdc solid 1px;
+    border-radius: 5px;
+    height: 100%;
+    text-align: center;
+}
+
+.container .edit-box .nickname-box:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-right: -0.25em; /* solution for inline-block bug */
+}
+
+.container .edit-box .nickname-box > span {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.container .edit-box input.content {
+    border-radius: 10px;
+    -moz-box-shadow: -5px -5px 5px #888;
+    -webkit-box-shadow: -5px -5px 5px #888;
+    box-shadow: -5px -5px 5px #888;
+
+    display: table-cell;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+.footer {
+    margin-top: 20px;
+}
