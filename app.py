@@ -6,6 +6,7 @@ import random
 
 from threading import Lock, Condition
 from flask import Flask, request, jsonify, render_template
+from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 
@@ -140,4 +141,6 @@ def index():
 
 application = app
 if __name__ == '__main__':
+    http_server = WSGIServer(('', 8080), application)
+    http_server.serve_forever()
     app.run(debug=True)
